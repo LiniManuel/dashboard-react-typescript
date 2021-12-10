@@ -1,10 +1,8 @@
-import styled, { CSSProperties } from "styled-components";
+import styled from "styled-components";
+import { DefaultStyledProps, defaultStyledProps } from "../../helper";
+interface Props extends DefaultStyledProps {}
 
-interface Props {
-  width?: CSSProperties["width"];
-}
 const Input = styled.input<Props>`
-  width: ${({ width = "80%" }) => width};
   height: 42px;
   border: ${({ theme }) => `${theme.colors.border}`};
   box-sizing: border-box;
@@ -17,6 +15,7 @@ const Input = styled.input<Props>`
   letter-spacing: 0.30000001192092896px;
   text-align: left;
   color: ${({ theme }) => theme.colors.secondary};
+  ${defaultStyledProps};
 `;
 
 export default Input;

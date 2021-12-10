@@ -1,8 +1,7 @@
-import styled, { CSSProperties } from "styled-components";
+import styled from "styled-components";
+import { DefaultStyledProps, defaultStyledProps } from "../../helper";
+interface Props extends DefaultStyledProps {}
 
-interface Props {
-  width?: CSSProperties["width"];
-}
 const Button = styled.button<Props>`
   left: 0px;
   right: 0px;
@@ -22,7 +21,7 @@ const Button = styled.button<Props>`
 
   text-align: center;
   letter-spacing: 0.2px;
-  width: ${({ width = "80%" }) => width};
+  ${defaultStyledProps};
 `;
 
 export default Button;
