@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { Button, Input, Text } from "./ui";
+import { ThemeProvider } from "styled-components";
+
+const palette = {
+  blue: "#3751FF",
+  gray: "#4B506D",
+  grayDark: "#363740",
+  transparent: "transparent",
+  black: "#252733",
+  white: "#FFFFFF",
+  warning: "#B33A3A",
+  grayLight: "F0F1F7",
+};
+
+const theme = {
+  colors: {
+    primary: palette.blue,
+    secondary: palette.gray,
+    tertiary: palette.grayDark,
+    border: palette.grayLight,
+    white: palette.white,
+    black: palette.black,
+    trasparent: palette.transparent,
+    warning: palette.warning,
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider theme={theme}>
+        <div style={{ width: "100%" }}>
+          <Text>Dashboard Title</Text>
+        </div>
+        <Input placeholder="Inserisci la password" />
+        <Button>Submit</Button>
+      </ThemeProvider>
     </div>
   );
 }
