@@ -2,13 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Flex, InputForm, Text } from "../..";
 import { EMAIL_REGEX, PASSWORD_REGEX, ROUTES } from "../../../utils";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../../../store/login/action";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function handleSubmit() {
     if (!EMAIL_REGEX.test(email)) {
@@ -18,6 +22,7 @@ const Login = () => {
       setErrorPassword(true);
     }
     if (EMAIL_REGEX.test(email) && PASSWORD_REGEX.test(password)) {
+      dispatch(setLogin(true));
       navigate(ROUTES.overview);
     }
   }
