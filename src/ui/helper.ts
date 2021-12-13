@@ -17,6 +17,9 @@ export interface DefaultStyledProps {
   marginTop?: CSSProperties["marginTop"];
   marginBottom?: CSSProperties["marginBottom"];
   position?: CSSProperties["position"];
+  boxShadow?: CSSProperties["boxShadow"];
+  borderRadius?: CSSProperties["borderRadius"];
+  overflow?: CSSProperties["borderRadius"];
 }
 
 export const defaultStyledProps = ({
@@ -36,23 +39,29 @@ export const defaultStyledProps = ({
   marginTop,
   marginBottom,
   position,
+  boxShadow,
+  borderRadius,
+  overflow,
 }: DefaultStyledProps) => {
   return `
-    flex-direction: ${flexDirection ? flexDirection : ""};
-    justify-content: ${justifyContent ? justifyContent : ""};
-    align-items: ${alignItems ? alignItems : ""};
-    width: ${width ? width : ""};
-    height: ${height ? height : ""};
-    padding: ${padding ? padding : ""};
-    padding-right: ${paddingRight ? paddingRight : ""};
-    padding-left: ${paddingLeft ? paddingLeft : ""};
-    padding-top: ${paddingTop ? paddingTop : ""};
-    padding-bottom: ${paddingBottom ? paddingBottom : ""};
-    margin: ${margin ? margin : ""};
-    margin-right: ${marginRight ? marginRight : ""};
-    margin-left: ${marginLeft ? marginLeft : ""};
-    margin-top: ${marginTop ? marginTop : ""};
-    margin-bottom: ${marginBottom ? marginBottom : ""};
-    position: ${position ? position : ""};
+  flex-direction: ${flexDirection ? flexDirection : ""};
+  justify-content: ${justifyContent ? justifyContent : ""};
+  align-items: ${alignItems ? alignItems : ""};
+  width: ${width ? width : ""};
+  height: ${height ? height : ""};
+  padding: ${padding ? padding : ""};
+  padding-right: ${paddingRight ? paddingRight : ""};
+  padding-left: ${paddingLeft ? paddingLeft : ""};
+  padding-top: ${paddingTop ? paddingTop : ""};
+  padding-bottom: ${paddingBottom ? paddingBottom : ""};
+  margin: ${margin ? margin : ""};
+  margin-right: ${marginRight ? marginRight : ""};
+  margin-left: ${marginLeft ? marginLeft : ""};
+  margin-top: ${marginTop ? marginTop : ""};
+  margin-bottom: ${marginBottom ? marginBottom : ""};
+  position: ${position ? position : ""};
+  box-shadow: ${boxShadow ? boxShadow : ""};
+  border-radius: ${borderRadius ? borderRadius : ""};
+  overflow: ${overflow ? overflow : ""};
   `;
 };

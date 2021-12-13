@@ -5,7 +5,14 @@ const Layout = () => {
   return (
     <Flex width="100vw" height="100vh">
       <Sidebar />
-      <Outlet />
+      <Flex
+        paddingLeft="50px"
+        paddingRight="33px"
+        paddingTop="30px"
+        overflow="auto"
+      >
+        <Outlet />
+      </Flex>
     </Flex>
   );
 };

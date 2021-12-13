@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import {
-  Login,
   Layout,
   Overview,
   Tickets,
@@ -11,6 +10,7 @@ import {
   Articles,
   Settings,
   Subscription,
+  LoginPage,
 } from "../ui";
 import { ROUTES } from "../utils";
 const AppRoutes = () => {
@@ -27,7 +27,7 @@ const AppRoutes = () => {
           <Route path={ROUTES.settings} element={<Settings />} />
           <Route path={ROUTES.subscription} element={<Subscription />} />
         </Route>
-        <Route path={ROUTES.login} element={<Login />} />
+        <Route path={ROUTES.login} element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );

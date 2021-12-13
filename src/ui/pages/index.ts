@@ -1,4 +1,4 @@
-export { default as Login } from "./Login";
+export { default as LoginPage } from "./LoginPage";
 export { default as Overview } from "./Overview";
 export { default as Tickets } from "./Tickets";
 export { default as Ideas } from "./Ideas";

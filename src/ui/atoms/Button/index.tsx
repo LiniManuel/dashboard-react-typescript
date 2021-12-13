@@ -9,6 +9,7 @@ const Button = styled.button<Props>`
   bottom: 0px;
   background: ${({ theme }) => theme.colors.primary};
   box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+  border: none;
   border-radius: 8px;
   height: 48px;
   color: ${({ theme }) => theme.colors.white};

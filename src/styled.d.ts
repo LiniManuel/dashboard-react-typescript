@@ -12,6 +12,8 @@ declare module "styled-components" {
       black: string;
       trasparent: string;
       warning: string;
+      mediumText: string;
+      subtitleText: string;
     };
   }
 }

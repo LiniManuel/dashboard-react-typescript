@@ -11,6 +11,8 @@ export const palette = {
   warning: "#B33A3A",
   grayLight: "F0F1F7",
   grayMid: "#9FA2B4",
+  lightGray: "#A4A6B3",
+  anotherGray: "#9FA2B4",
 };
 
 export const theme = {
@@ -24,6 +26,8 @@ export const theme = {
     black: palette.black,
     trasparent: palette.transparent,
     warning: palette.warning,
+    mediumText: palette.lightGray,
+    subtitleText: palette.anotherGray,
   },
 };
 
