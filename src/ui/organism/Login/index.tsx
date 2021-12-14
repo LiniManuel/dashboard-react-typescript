@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Flex, InputForm, Text } from "../..";
 import { EMAIL_REGEX, PASSWORD_REGEX, ROUTES } from "../../../utils";
 import { useDispatch } from "react-redux";
-import { setLogin } from "../../../store/login/action";
+import { setLogin } from "../../../store";
 
 const Login = () => {
   const [email, setEmail] = useState("");
