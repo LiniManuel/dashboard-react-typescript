@@ -1,4 +1,10 @@
+import { ArticleTable } from "../..";
+
 const Articles = () => {
-  return <div>Articles</div>;
+  return (
+    <div>
+      <ArticleTable />
+    </div>
+  );
 };
 export default Articles;

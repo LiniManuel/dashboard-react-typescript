@@ -1,4 +1,11 @@
+import { Flex } from "../../atoms";
+import { Users } from "../../organism";
+
 const Contacts = () => {
-  return <div>Contacts</div>;
+  return (
+    <Flex>
+      <Users />
+    </Flex>
+  );
 };
 export default Contacts;

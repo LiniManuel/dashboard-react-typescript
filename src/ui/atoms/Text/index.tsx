@@ -11,6 +11,8 @@ interface Props extends DefaultStyledProps {
   lineHeight?: CSSProperties["lineHeight"];
   color?: keyof Theme["colors"];
   letterSpacing?: CSSProperties["letterSpacing"];
+  whiteSpace?: CSSProperties["whiteSpace"];
+  textOverflow?: CSSProperties["textOverflow"];
 }
 
 const Text = styled.div<Props>`
@@ -22,6 +24,9 @@ const Text = styled.div<Props>`
   line-height: ${({ lineHeight = "normal" }) => (lineHeight ? lineHeight : "")};
   letter-spacing: ${({ letterSpacing = "normal" }) =>
     letterSpacing ? letterSpacing : ""};
+  white-space: ${({ whiteSpace = "normal" }) => (whiteSpace ? whiteSpace : "")};
+  text-overflow: ${({ textOverflow = "normal" }) =>
+    textOverflow ? textOverflow : ""};
   color: ${({ theme, color = "black" }) =>
     theme.colors[color] ? theme.colors[color] : ""};
   ${defaultStyledProps};
