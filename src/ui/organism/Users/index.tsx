@@ -2,8 +2,8 @@ import TableComponent from "../../molecules/TableComponent";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
 import { useEffect } from "react";
-import { Flex } from "../../atoms";
-import { fetchUsers } from "../../../store/users";
+import { Button, Flex } from "../../atoms";
+import { fetchUsers, resetUsers } from "../../../store/users";
 
 const COLUMNS = [
   {
@@ -24,6 +24,7 @@ const Users = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.user.data);
   const loading = useSelector((state: RootState) => state.user.loading);
+  const error = useSelector((state: RootState) => state.user.error);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -34,6 +35,9 @@ const Users = () => {
   }
   return (
     <div>
+      <Button onClick={() => dispatch(resetUsers)}>Reset user list</Button>
+      {error ? <Flex>{error}</Flex> : ""}
+      <Button onClick={() => dispatch(fetchUsers)}>Insert user list</Button>
       <TableComponent data={user} columns={COLUMNS}></TableComponent>
     </div>
   );

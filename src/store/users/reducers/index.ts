@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { FetchUsersInitialState } from "../types";
-import { fetchUsers } from "../actions";
+import { fetchUsers, resetUsers } from "../actions";
 const initialState: FetchUsersInitialState = {
   data: [],
   loading: false,
@@ -24,6 +24,11 @@ export const fetchUsersSlice = createSlice({
       .addCase(fetchUsers.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = "error call";
+      })
+      .addCase(resetUsers, (state) => {
+        state.data = [];
+        state.error = "";
+        state.loading = false;
       });
   },
 });

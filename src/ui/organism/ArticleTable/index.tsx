@@ -1,8 +1,8 @@
 import TableComponent from "../../molecules/TableComponent";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPosts, RootState } from "../../../store";
+import { fetchPosts, resetPosts, RootState } from "../../../store";
 import { useEffect } from "react";
-import { Flex } from "../../atoms";
+import { Button, Flex } from "../../atoms";
 
 const COLUMNS = [
   {
@@ -23,6 +23,7 @@ const ArticleTable = () => {
   const dispatch = useDispatch();
   const post = useSelector((state: RootState) => state.post.data);
   const loading = useSelector((state: RootState) => state.post.loading);
+  const error = useSelector((state: RootState) => state.post.error);
 
   useEffect(() => {
     dispatch(fetchPosts());
@@ -34,6 +35,9 @@ const ArticleTable = () => {
 
   return (
     <div>
+      <Button onClick={() => dispatch(resetPosts())}>Reset post list</Button>
+      {error ? <Flex>{error}</Flex> : ""}
+      <Button onClick={() => dispatch(fetchPosts())}>Insert post list</Button>
       <TableComponent data={post} columns={COLUMNS}></TableComponent>
     </div>
   );

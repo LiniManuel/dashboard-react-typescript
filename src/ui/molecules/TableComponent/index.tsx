@@ -82,7 +82,6 @@ const TableComponent = ({
           </Flex>
         </Flex>
       ))}
-      ;
     </Flex>
   );
 };
